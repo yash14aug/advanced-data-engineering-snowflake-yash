@@ -59,7 +59,7 @@ jobs:
       # Deploy templates to the data environment -
       - name: Deploy templates to data environment
         run: |
-          echo "Using branch: ${GITHUB_REF_NAME}"
+          echo "Using branch: ${{ github.ref_name }}"
           snow git execute @advanced_data_engineering_snowflake/branches/${GITHUB_REF_NAME}/module-1/hamburg_weather/pipeline/data/ \
           -D "env='${{ env.DEPLOY_ENV }}'" \
           --database=COURSE_REPO \
